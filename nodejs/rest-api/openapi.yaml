@@ -1,18 +1,16 @@
 openapi: 3.0.3
 info:
   title: Choreo Samples - Nodejs REST API
-  description: >-
-    This is a sample API specification for a simple in-memory cache application
-    written in Nodejs
+  description: This is a sample API specification for a simple in-memory cache application written in Nodejs
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   version: 1.0.0
 externalDocs:
   description: Choreo
-  url: https://choreo.dev
+  url: 'https://choreo.dev'
 servers:
-  - url: http://localhost:8080
+  - url: 'http://localhost:8080'
 tags:
   - name: keys
     description: In-memory key-value cache API
@@ -31,6 +29,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringArray'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hello:
+                  type: integer
+                s:
+                  type: object
+                  properties:
+                    h:
+                      type: integer
+              x-examples:
+                Example 1:
+                  hello: 1
+                  s:
+                    h: 1
     post:
       summary: Set or update cache item
       operationId: SetNewKey
@@ -45,9 +61,8 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/KeyValue'  
-              
-  /api/keys/{key}:
+              $ref: '#/components/schemas/KeyValue'
+  '/api/keys/{key}':
     summary: Manage keys by ID
     get:
       tags:
@@ -96,7 +111,6 @@ paths:
       responses:
         '200':
           description: Healthy response
-
 components:
   schemas:
     Key:
@@ -104,19 +118,19 @@ components:
       properties:
         key:
           type: string
-          example: 'my-key'
+          example: my-key
     KeyValue:
       type: object
       required:
         - key
         - value
       properties:
-        key: 
+        key:
           type: string
-          example: 'my-key'
+          example: my-key
         value:
           type: string
-          example: 'my-value'
+          example: my-value
         ttl:
           type: integer
           example: 30
@@ -124,4 +138,3 @@ components:
       type: array
       items:
         type: string
-  
