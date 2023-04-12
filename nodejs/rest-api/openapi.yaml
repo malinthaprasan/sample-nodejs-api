@@ -62,6 +62,18 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/KeyValue'
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                age:
+                  type: integer
+              x-examples:
+                Example 1:
+                  name: malintha
+                  age: 100
   '/api/keys/{key}':
     summary: Manage keys by ID
     get:
