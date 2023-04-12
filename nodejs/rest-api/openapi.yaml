@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Choreo Samples - Nodejs REST API
-  description: is a sample API specification for a simple in-memory cache application written in Nodejs
+  description: is a sample API specification for a simple in-memory cache application written in
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
