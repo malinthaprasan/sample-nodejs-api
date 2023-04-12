@@ -15,7 +15,7 @@ tags:
   - name: keys
     description: In-memory key-value cache API
 paths:
-  /api/keys:
+  /api/keys/abc:
     summary: List all keys
     get:
       summary: List all keys
@@ -74,6 +74,7 @@ paths:
                 Example 1:
                   name: malintha
                   age: 100
+    parameters: []
   '/api/keys/{key}':
     summary: Manage keys by ID
     get:
@@ -123,6 +124,18 @@ paths:
       responses:
         '200':
           description: Healthy response
+  '/name/{name}':
+    parameters:
+      - schema:
+          type: string
+        name: name
+        in: path
+        required: true
+    get:
+      summary: get name
+      tags: []
+      responses: {}
+      operationId: get-name-name
 components:
   schemas:
     Key:
