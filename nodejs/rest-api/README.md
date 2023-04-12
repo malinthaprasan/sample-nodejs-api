@@ -2,7 +2,7 @@
 
 ## Sample Nodejs REST API
 
-#### Use the following build config when creating this component in Choreo:
+#### Use the following build config when creating this component in:
 
 - Dockerfile: `nodejs/rest-api/Dockerfile`
 - Docker context: `nodejs/rest-api/`
